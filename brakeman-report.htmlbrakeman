@@ -1,0 +1,31 @@
+
+== Brakeman Report ==
+
+Application Path: /home/breerop/my_portfolio_project
+Rails Version: 7.2.1
+Brakeman Version: 6.2.1
+Scan Date: 2024-10-17 12:18:59 +0300
+Duration: 0.608993106 seconds
+Checks Run: BasicAuth, BasicAuthTimingAttack, CSRFTokenForgeryCVE, ContentTag, CookieSerialization, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, DynamicFinders, EOLRails, EOLRuby, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONEntityEscape, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, MimeTypeDoS, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NestedAttributesBypass, NumberToCurrency, PageCachingCVE, Pathname, PermitAttributes, QuoteTableName, Ransack, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, RouteDoS, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeConfigCve, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionManipulation, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, SprocketsPathTraversal, StripTags, SymbolDoSCVE, TemplateInjection, TranslateBug, UnsafeReflection, UnsafeReflectionMethods, ValidationRegex, VerbConfusion, WeakRSAKey, WithoutProtection, XMLDoS, YAMLParsing
+
+== Overview ==
+
+Controllers: 3
+Models: 5
+Templates: 11
+Errors: 2
+Security Warnings: 0
+
+== Warning Types ==
+
+
+== Errors ==
+
+Error: app/controllers/about_controller.rb:5 :: parse error on value "$" ($end) Could not parse app/controllers/about_controller.rb
+Location: /home/breerop/.asdf/installs/ruby/3.3.4/lib/ruby/gems/3.3.0/gems/racc-1.8.1/lib/racc/parser.rb:536:in `on_error'
+
+Error: app/controllers/contact_controller.rb:4 :: parse error on value "$" ($end) Could not parse app/controllers/contact_controller.rb
+Location: /home/breerop/.asdf/installs/ruby/3.3.4/lib/ruby/gems/3.3.0/gems/racc-1.8.1/lib/racc/parser.rb:536:in `on_error'
+
+No warnings found
+

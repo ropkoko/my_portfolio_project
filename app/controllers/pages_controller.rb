@@ -1,11 +1,11 @@
-require 'ostruct'
+require "ostruct"
 
 class PagesController < ApplicationController
   def index
     @name = "Brenda Rop"
     @contact_email = "ropbrenda4@gmail.com"
     @projects = [
-      { title: 'Portfolio Website', description: 'A personal portfolio website to showcase my projects and skills.'}]
+      { title: "Portfolio Website", description: "A personal portfolio website to showcase my projects and skills." } ]
   end
 
   def about
@@ -18,6 +18,5 @@ class PagesController < ApplicationController
 
   def contact
     @contact_info = "you can reach out through email, or my social media platforms provided."
-  end  
+  end
 end
-

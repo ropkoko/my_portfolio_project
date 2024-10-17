@@ -1,0 +1,13 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+# Enable specific performance and security checks
+Performance:
+  Enabled: true
+
+Rails:
+  Enabled: true
+
+# You can add custom security cops here
+
