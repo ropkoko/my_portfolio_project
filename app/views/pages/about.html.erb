@@ -1,0 +1,29 @@
+<div class="about-container">
+  <div class="image-section" style="text-align: right;">
+    <div class="profile-picture">
+      <% if @user && @user.profile_picture.attached? %>
+        <%= image_tag @user.profile_picture, class: "profile-pic" %>
+      <% else %>
+        <%= image_tag "profile_picture.jpg", class: "profile-pic" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="text-section">
+    <h1>About Me</h1>
+    <p class="paragraph-one">Hello and Welcome! Allow me to share a bit about myself.</p>
+    <p class="paragraph-two">I'm Brenda Rop, a passionate Software Engineer with a strong foundation in full-stack development, honed through rigorous training at ALX Bootcamp. With a knack for solving complex problems and creating efficient, scalable solutions, I thrive in fast-paced environments where innovation meets execution.</p>
+    <p class="third-paragraph">I specialize in building dynamic, user-centric web applications using technologies like Ruby on Rails, JavaScript, MySQL, Docker, and more.</p>
+    <p>My journey in software engineering has equipped me with a versatile skill set, enabling me to tackle both front-end and back-end development challenges with equal enthusiasm. At ALX, I collaborated with diverse teams on a variety of real-world projects, from designing responsive websites to developing robust APIs. These experiences not only sharpened my technical skills but also strengthened my ability to communicate effectively and work cross-functionally to deliver high-quality software.</p>
+    <p class="fifth-paragraph">Here’s what you can expect from my work:</p>
+    <p class="sixth-paragraph">
+      <ol class="style">
+        <li>Efficient Problem Solving: I love dissecting problems and finding clean, efficient solutions through code.</li>
+        <li>Attention to Detail: My projects reflect meticulous attention to detail, ensuring that both the user experience and code quality are top-notch.</li>
+        <li>Continuous Learning: I’m always exploring new technologies and methodologies to stay at the forefront of the industry.</li>
+        <li>Collaboration: Whether working independently or as part of a team, I believe in open communication and knowledge sharing to achieve the best outcomes.</li>
+      </ol>
+    </p>
+    <p class="seventh-paragraph">Let’s connect and build something amazing together!</p>
+  </div>
+</div>

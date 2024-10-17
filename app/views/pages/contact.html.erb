@@ -1,0 +1,52 @@
+<div class="contact-container">
+   <div class="container">
+      <h1>Contact Me</h1>
+  <div id="toast" class="toast">
+  <p>Feel free to reach me</p>
+  </div>
+  </div>
+  <!-- Contact Form -->
+  <form action="/submit_contact_form" method="POST" class="contact-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject">
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+       <% if flash[:success] %>
+        <div class="alert-success">
+          <p><%= flash[:sent!] %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <button type="submit" class="submit-btn">Send Message</button>
+
+  </form>
+
+  <!-- Social Media Links -->
+  <div class="social-links">
+    <p>Let's connect! Reach me on:</p>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/brendachris" target="_blank">LinkedIn</a></li>
+      <i class="fa-brands fa-linkedin"></i>
+      <li><a href="https://github.com/ropkoko" target="_blank">GitHub</a></li>
+      <i class="fa-brands fa-github"></i>
+      <li><a href="https://twitter.com/ropbrenda4chris" target="_blank">Twitter</a></li>
+      <i class="fa-brands fa-twitter"></i>
+      <li><a href="https://email.com/ropbrenda4" target="_blank">Email</a></li>
+    </ul>
+  </div>
+</div>
