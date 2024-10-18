@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: rails server -b 0.0.0.0
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: mysql2://ropkoko:bravin@db:3306/my_portfolio_project_development
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password # Change this to your desired root password
+      MYSQL_DATABASE: my_portfolio_project_development
+      MYSQL_USER: ropkoko
+      MYSQL_PASSWORD: bravin
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
