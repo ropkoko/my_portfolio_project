@@ -21,4 +21,10 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+### Database Configuration
+
+We have successfully granted all necessary permissions to the MySQL user `ropkoko` for the development and test databases. The previous connection issues should be resolved.
+
+- User: `ropkoko`
+- Permissions: Granted ALL privileges on `my_portfolio_project_development` and `my_portfolio_project_test` databases.
+

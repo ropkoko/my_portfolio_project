@@ -15,14 +15,17 @@ default: &default
   port: 5
   database: my_portfolio_project_development
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: ropkoko
-  password: 'bravin'
+  username: breerop
+  password: 'breerop'
   socket: /var/run/mysqld/mysqld.sock
   port: 3306
 
 development:
   <<: *default
   database:  my_portfolio_project_development
+  host: localhost
+  username: breerop
+  password: 'breerop'
   host: localhost
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -31,7 +34,8 @@ test:
   <<: *default
   database: my_portfolio_project_test
   host: localhost
-
+  username: breerop
+  password: 'breerop'
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -56,3 +60,5 @@ production:
   <<: *default
   database: my_portfolio_project_production
   host: localhost
+  username: breerop
+  password: 'breerop'
