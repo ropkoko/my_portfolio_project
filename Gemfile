@@ -72,7 +72,7 @@ gem "tailwindcss-rails", "~> 2.3"
 gem "aws-sdk-s3", require: false
 
 gem "pagy", "~> 8.1"
-gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+gem "dotenv-rails", '~> 2.1', '>= 2.1.1'
 
-gem 'brakeman', require: false
-gem 'rubocop-rails-omakase'
+gem "brakeman", require: false
+gem "rubocop-rails-omakase"
