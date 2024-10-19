@@ -58,22 +58,18 @@ jobs:
 
     services:
       postgres:
-        image: postgres
+        image: postgres:latest
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: test_db
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "password"
+          POSTGRES_DB: "test_db"
         ports:
           - 5432:5432
-        options: > 
-          --health-cmd="pg_isready -U postgres" 
-          --health-interval=10s 
-          --health-timeout=5s 
-          --health-retries=5
+        options: --health-cmd="pg_isready -U postgres" --health-interval=10s --health-timeout=5s --health-retries=5
 
     steps:
       - name: Install packages
-        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y google-chrome-stable curl default-postgresql-client libjemalloc2 libvips
+        run: sudo apt-get update && sudo apt-get install --no-install-recommends -y google-chrome-stable curl postgresql-client libjemalloc2 libvips
 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -84,10 +80,17 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Wait for PostgreSQL to be ready
+        run: |
+          while ! pg_isready -h postgres -U postgres; do
+            echo "Waiting for PostgreSQL..."
+            sleep 2
+          done
+
       - name: Run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:password@localhost:5432/test_db
+          DATABASE_URL: postgres://postgres:password@postgres:5432/test_db
         run: bin/rails db:test:prepare test test:system
 
       - name: Keep screenshots from failed system tests
