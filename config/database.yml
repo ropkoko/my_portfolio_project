@@ -1,23 +1,26 @@
-default: &default
-  adapter: mysql2
-  encoding: utf8
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: my_portfolio_project_development
   pool: 5
   username: breerop
   password: breerop
   host: localhost
-  port: 3306
-
-development:
-  <<: *default
-  database: my_portfolio_project_development
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: my_portfolio_project_test
+  pool: 5
+  username: breerop
+  password: breerop
+  host: localhost
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: my_portfolio_project_production
-  username: <%= ENV['DB_USERNAME'] %> # Use environment variable for production
-  password: <%= ENV['DB_PASSWORD'] %> # Use environment variable for production
-  host: <%= ENV['DB_HOST'] || 'localhost' %> # Use environment variable for production
+  pool: 5
+  username: breerop
+  password: breerop
+  host: localhost
