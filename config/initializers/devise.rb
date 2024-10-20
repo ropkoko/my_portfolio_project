@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -36,7 +36,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'f09703e24bf77f0f511963ad70544cdd56f1b38bcee5af80fa6ca70be31119d60dc46a796252094731494cf34852c1c7a22dc0ec883bce3613029c2ab5cf2c48'
+  # config.pepper = 'f09703e24bf77f0f511963ad70544cdd56f1b38bcee5af80fa6ca70be31119d60dc46a79625                     2094731494cf34852c1c7a22dc0ec883bce3613029c2ab5cf2c48'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
