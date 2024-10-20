@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  def index
+  def projects
      @projects = Project.all # Fetch all projects from the database
   end
 end

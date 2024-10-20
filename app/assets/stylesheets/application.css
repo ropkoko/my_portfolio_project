@@ -317,9 +317,8 @@ footer {
 }
 /* project styling */
 .projects-container {
-	margin-top:60px;
-	margin: auto;
-	padding: 0;
+	margin-top: 60px;
+	padding: 20px;
 }
 .project {
 	border: 1px solid #ccc;

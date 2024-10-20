@@ -6,8 +6,11 @@
   <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
 </head>
 <body>
   <div class="left-section">
@@ -29,7 +32,8 @@
          <div class="top-left-icon">
            <i class="fa-solid fa-b"></i>
          </div>
-  </nav>
+    </nav>
+
   </div>
   <footer>
     <div class="social-icons">
@@ -46,11 +50,8 @@
             <i class="fa-brands fa-instagram"></i>
           </a>
     </div>
-    <div class= "bottom-left-icons">
-      <i class="fa-solid fa-grid-round"></i>
-      <div>
-
   </footer>
-  <%= yield %>
+
+<%= yield %>
 </body>
 </html>

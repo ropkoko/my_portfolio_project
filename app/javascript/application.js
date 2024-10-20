@@ -2,6 +2,8 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
+import "trix"
+import "@rails/actiontext"
 // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function() {
   // Get elements
