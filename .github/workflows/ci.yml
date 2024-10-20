@@ -58,14 +58,14 @@ jobs:
 
     services:
       postgres:
-        image: postgres:latest
+        image: postgres:13
         env:
-          POSTGRES_USER: "postgres"
-          POSTGRES_PASSWORD: "password"
-          POSTGRES_DB: "test_db"
+          POSTGRES_USER: "breerop"
+          POSTGRES_PASSWORD: "breerop"
+          POSTGRES_DB: "my_portfolio_project_test"
         ports:
           - 5432:5432
-        options: --health-cmd="pg_isready -U postgres" --health-interval=10s --health-timeout=5s --health-retries=5
+        options: --health-cmd="pg_isready -U postgres" --health-interval=10s --health-timeout=10s --health-retries=10
 
     steps:
       - name: Install packages
@@ -84,13 +84,13 @@ jobs:
         run: |
           while ! pg_isready -h postgres -U postgres; do
             echo "Waiting for PostgreSQL..."
-            sleep 2
+            sleep 5
           done
 
       - name: Run tests
         env:
           RAILS_ENV: test
-          DATABASE_URL: postgres://postgres:password@postgres:5432/test_db
+          DATABASE_URL: postgres://breerop:breerop@localhost:5432/my_portfolio_project_test
         run: bin/rails db:test:prepare test test:system
 
       - name: Keep screenshots from failed system tests
